@@ -7,44 +7,56 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="bg-gray-100">
-    <header class="w-[80%] mx-auto ">
+   <main class="w-[80%] mx-auto">
+     <header >
         <h1 class="text-3xl font-bold text-black-500 my-3">Job Application Tracker</h1>
     <div class="grid grid-cols-3 gap-3">
         <div class="bg-white p-4 rounded">
             <p class="font-bold">Total</p>
-            <p class="text-black">8</p>
+            <p id="total" class="text-black">0</p>
         </div>
         <div class="bg-white p-4 rounded">
             <p class="font-bold">Interview</p>
-            <p class="text-green-500">0</p>
+            <p id="interview" class="text-green-500">0</p>
         </div>
         <div class="bg-white p-4 rounded">
             <p class="font-bold">Rejected</p>
-            <p class="text-red-500">0</p>
+            <p id="rejected" class="text-red-500">0</p>
         </div>
     </div>
     </header>
 
-    <section class="w-[80%] mx-auto mt-3">
+    <section class="mt-3">
         <p class="text-3xl mb-3">Available Jobs</p>
-        <button class="w-30 bg-blue-700 text-amber-50 p-1 rounded mr-5">All</button>
-        <button class="w-30 bg-blue-700 text-amber-50 p-1 rounded mr-5">Interview</button>
-        <button class="w-30 bg-blue-700 text-amber-50 p-1 rounded mr-5">Rejected</button>
+        <button onclick="toggleStyle('allfilter')" id="allfilter" class="w-30 bg-blue-700 text-amber-50 p-1 rounded mr-5">All</button>
+        <button onclick="toggleStyle('interviewfilter')" id="interviewfilter" class="w-30 bg-white text-black p-1 rounded mr-5">Interview</button>
+        <button onclick="toggleStyle('rejectedfilter')" id="rejectedfilter" class="w-30 bg-white text-black p-1 rounded mr-5">Rejected</button>
 
     </section>
-    <section class="w-[80%] mx-auto mt-3">
-        <div class="bg-white p-4 rounded ">
-            <p class="font-bold">Mobile First Corp</p>
-            <p>React Native Daveloper</p>
-            <p class="text-black">Remote  • Full-time  • $130,000 - $175,000</p>
-            <button class="w-30 bg-blue-200  p-1 rounded mr-5">Not Applied</button>
-            <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
-            <button class="w-30 border border-green-500 font-bold text-green-500  p-1 rounded mt-2">INTERVIEW</button>
-            <button class="w-30 border border-red-500 font-bold text-red-500 p-1 rounded ">REJECTED</button>
 
+    <section id="filteredSection" class="hidden">
+
+    </section>
+
+    <section id="all-card" class="mt-3">
+        <div class="bg-white p-4 rounded  flex justify-between mt-3">
+            <div>
+                <p class="companyName font-bold">Mobile First Corp</p>
+                <p class="position">React Native Daveloper</p>
+                <p class="benifit text-black">Remote  • Full-time  • $130,000 - $175,000</p>
+                <button class="apllyBtn w-30 bg-blue-200  p-1 rounded mr-5">Not Applied</button>
+                <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <button class="interviewBtn w-30 border border-green-500 font-bold text-green-500  p-1 rounded mt-2">INTERVIEW</button>
+                <button class="w-30 border border-red-500 font-bold text-red-500 p-1 rounded ">REJECTED</button>
+
+           </div>
+           <div>
+            <button class="bg-red-500 p-1.5 text-white">Delete</button>
+           </div>
         </div>
 
-        <div class="bg-white p-4 rounded mt-5">
+       <div class="bg-white p-4 rounded mt-5 flex justify-between">
+         <div class="">
             <p class="font-bold">WebFlow Agency</p>
             <p>Web Designer & Developer</p>
             <p class="text-black">Los Angeles, CA  • Part-time  • $80,000 - $120,00</p>
@@ -54,8 +66,13 @@
             <button class="w-30 border border-red-500 font-bold text-red-500 p-1 rounded ">REJECTED</button>
 
         </div>
+         <div>
+            <button class="bg-red-500 p-1.5 text-white">Delete</button>
+           </div>
+       </div>
 
-         <div class="bg-white p-4 rounded mt-5">
+        <div class="bg-white p-4 rounded mt-5 flex justify-between">
+             <div >
             <p class="font-bold">DataViz Solutions</p>
             <p>Data Visualization Specialist</p>
             <p class="text-black">Boston, MA • Full-time  • $125,000 - $165,000</p>
@@ -64,6 +81,10 @@
             <button class="w-30 border border-green-500 font-bold text-green-500  p-1 rounded mt-2">INTERVIEW</button>
             <button class="w-30 border border-red-500 font-bold text-red-500 p-1 rounded ">REJECTED</button>
 
+        </div>
+        <div>
+            <button class="bg-red-500 p-1.5 text-white">Delete</button>
+           </div>
         </div>
 
          <div class="bg-white p-4 rounded mt-5">
@@ -121,5 +142,7 @@
 
         </div>
     </section>
+   </main>
+    <script src="js/script.js"></script>
 </body>
 </html>
